@@ -1,0 +1,163 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e1e2f, #3b3b6b, #2f2f5a);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .login-box {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(128, 0, 255, 0.3);
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+  }
+  
+  .title {
+    color: #8000ff;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .futuristic-input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 5px rgba(128, 0, 255, 0.2);
+  }
+  
+  .futuristic-input:focus {
+    box-shadow: 0 0 15px rgba(128, 0, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  .futuristic-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .error-text {
+    color: #ff5555;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  .futuristic-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #8000ff, #b300ff);
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(128, 0, 255, 0.5);
+  }
+  
+  .futuristic-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(128, 0, 255, 0.8);
+  }
+  
+  .social-login {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .social-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+  }
+  
+  .social-button.google {
+    background: linear-gradient(45deg, #4285f4, #34a853);
+    box-shadow: 0 0 10px rgba(66, 133, 244, 0.5);
+  }
+  
+  .social-button.google:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(66, 133, 244, 0.8);
+  }
+  
+  .social-button.facebook {
+    background: linear-gradient(45deg, #3b5998, #8b9dc3);
+    box-shadow: 0 0 10px rgba(59, 89, 152, 0.5);
+  }
+  
+  .social-button.facebook:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(59, 89, 152, 0.8);
+  }
+  
+  .link-text {
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .link-text a {
+    color: #8000ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .link-text a:hover {
+    color: #b300ff;
+  }
+  
+  .social-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+    display: flex; /* Add flex to align icon and text */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .social-button.github {
+    background: linear-gradient(45deg, #333333, #6b7280);
+    box-shadow: 0 0 10px rgba(51, 51, 51, 0.5);
+  }
+  
+  .social-button.github:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(51, 51, 51, 0.8);
+  }
