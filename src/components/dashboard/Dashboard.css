@@ -1,198 +1,192 @@
 /* Dashboard Container */
 .dashboard-container {
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f7fc;
-  }
-  
-  /* Topbar */
-  .topbar {
-    display: flex;
-    justify-content: space-between;
-    background-color: #4caf50;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 8px;
-  }
-  
-  .topbar-left h2 {
-    font-size: 24px;
-    margin: 0;
-  }
-  
-  .topbar-menu {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .topbar-menu li {
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-  }
-  
-  .topbar-right {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  /* Widgets Section */
-  .widgets-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #f0f4ff, #ffffff);
+  min-height: 100vh;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2fe01b;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.topbar-left h2 {
+  font-size: 26px;
+  margin: 0;
+}
+
+.topbar-menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin-left: 30px;
+  text-decoration: none;
+}
+
+
+.topbar-menu li {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s;
+  color: #fff;
+}
+
+.welcome-message{
+  font-size: 18px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.topbar-menu li:hover {
+  color: #ffeb3b;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.topbar-right:hover {
+  color: #ff4081;
+}
+
+/* Main Content */
+.main-content h2 {
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+.main-content p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Widgets Section */
+.widgets-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: center;
+  padding: 30px 220px;
+}
+
+.widget-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  width: 30%;
+  text-align: center;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.widget-card:hover {
+  transform: translateY(-5px);
+}
+
+.widget-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #3f51b5;
+}
+
+.widget-card h3 {
+  font-size: 18px;
+  color: #444;
+}
+
+.widget-card p {
+  font-size: 28px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Custom Widget Styles */
+.widget-card.active {
+  background: #fff0f1;
+  border-left: 6px solid #f44336;
+}
+
+.widget-card.recovered {
+  background: #e6f4ea;
+  border-left: 6px solid #4caf50;
+}
+
+.widget-card.deceased {
+  background: #eeeeee;
+  border-left: 6px solid #616161;
+}
+
+.widget-card.icu {
+  background: #fffde7;
+  border-left: 6px solid #ff9800;
+}
+
+.widget-card.vaccinated {
+  background: #e3f2fd;
+  border-left: 6px solid #2196f3;
+}
+
+/* Charts Section */
+.charts-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.chart-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  width: 30%;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.chart-card h3 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
   .widget-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 23%;
-    text-align: center;
+    width: 45%;
   }
-  
-  .widget-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #555;
-  }
-  
-  .widget-card p {
-    font-size: 26px;
-    font-weight: 600;
-    color: #333;
-  }
-  
-  .widget-card.active-cases {
-    background: #ffebee;
-    border-left: 5px solid #f44336;
-  }
-  
-  .widget-card.recovered {
-    background: #e8f5e9;
-    border-left: 5px solid #66bb6a;
-  }
-  
-  .widget-card.deceased {
-    background: #f1f1f1;
-    border-left: 5px solid #9e9e9e;
-  }
-  
-  /* Charts Section */
-  .charts-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-  }
-  
   .chart-card {
-    background: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    width: 30%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 45%;
   }
-  
-  .chart-card h3 {
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 18px;
-    text-align: center;
+}
+
+@media (max-width: 768px) {
+  .widgets-container, .charts-container {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  /* Table Styles */
-  .table-container {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .filters {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: flex-start;
-    gap: 15px;
-  }
-  
-  .filters input {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 250px;
-    font-size: 14px;
-  }
-  
-  .patient-table {
+
+  .widget-card,
+  .chart-card {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
   }
-  
-  .patient-table th,
-  .patient-table td {
-    padding: 15px;
-    text-align: left;
-    border: 1px solid #ddd;
-  }
-  
-  .patient-table th {
-    background-color: #f4f4f4;
-    color: #555;
-  }
-  
-  .patient-table tbody tr {
-    transition: background-color 0.3s;
-  }
-  
-  .patient-table tbody tr:hover {
-    background-color: #f9f9f9;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .widgets-container {
-      flex-direction: column;
-      gap: 20px;
-    }
-  
-    .widget-card {
-      width: 100%;
-    }
-  
-    .charts-container {
-      flex-direction: column;
-      gap: 20px;
-    }
-  
-    .chart-card {
-      width: 100%;
-    }
-  
-    .filters input {
-      width: 100%;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .topbar-menu {
-      display: none;
-    }
-  
-    .topbar-right {
-      font-size: 14px;
-    }
-  
-    .patient-table th,
-    .patient-table td {
-      padding: 12px;
-    }
-  
-    .patient-table {
-      font-size: 14px;
-    }
-  }
-  
+}
