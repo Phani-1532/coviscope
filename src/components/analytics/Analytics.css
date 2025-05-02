@@ -5,13 +5,14 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #f8f9fa, #e0f7fa);
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .analytics-wrapper h2 {
   text-align: center;
   color: #37474f;
   margin-bottom: 1rem;
-  font-size: 1.5rem; /* Reduced font size */
+  font-size: 1.5rem;
   text-shadow: 1px 1px 2px #ccc;
 }
 
@@ -50,9 +51,10 @@
 /* Responsive Chart Container */
 .charts-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ 
   gap: 1.5rem;
   margin-top: 1rem;
+  box-sizing: border-box;
 }
 
 .chart-card {
@@ -64,6 +66,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .chart-card h3 {
@@ -73,7 +77,6 @@
   text-align: center;
 }
 
-/* Make charts responsive */
 .chart-card canvas {
   flex-grow: 1;
   width: 100% !important;
@@ -83,9 +86,25 @@
   object-fit: contain;
 }
 
-/* Media queries for smaller screens */
-@media (max-width: 768px) {
+/* 💻 Force 2 charts per row on laptops */
+@media(min-width: 1440px) {
+  .charts-container {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)) !important;
+  }
+}
 
+
+@media(max-width: 1024px) {
+  .charts-container {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+  }
+}
+
+
+
+
+/* Tablet screens */
+@media (max-width: 768px) {
   .analytics-wrapper h2 {
     font-size: 1.3rem;
   }
@@ -99,6 +118,7 @@
   }
 }
 
+/* Mobile - 425px */
 @media (max-width: 425px) {
   .analytics-wrapper {
     padding: 1rem;
@@ -109,9 +129,26 @@
     margin-bottom: 0.8rem;
   }
 
+  .stats-cards {
+    gap: 0.8rem;
+  }
+
+  .card {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+
   .charts-container {
     gap: 1rem;
+    grid-template-columns: 1fr;
+  }
 
+  .chart-card {
+    padding: 12px;
+  }
+
+  .chart-card h3 {
+    font-size: 14px;
   }
 
   .chart-card canvas {
@@ -119,8 +156,17 @@
   }
 }
 
+/* Small Mobile - 375px */
 @media (max-width: 375px) {
+  .analytics-wrapper h2 {
+    font-size: 1.1rem;
+  }
+
   .chart-card canvas {
     max-height: 180px;
+  }
+
+  .card span {
+    font-size: 1.1rem;
   }
 }
