@@ -30,7 +30,7 @@ const Dashboard = () => {
           <h2>🩺 MedTrack</h2>
           <ul className="topbar-menu">
             <Link to='/dashboard'><li>Dashboard</li></Link>
-            <Link to='/reports'><li>Patient Reports</li></Link>
+            <Link to='/reports'><li>Global data</li></Link>
             <Link to='/analytics'><li>Analytics</li></Link>
           </ul>
         </div>
