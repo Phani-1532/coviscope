@@ -14,13 +14,12 @@
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   flex-wrap: wrap;
-  position: relative; /* Added to ensure the hamburger stays at the top right */
+  position: relative;
 }
 
 .topbar-left h2 {
   margin: 0;
   color: #00796b;
-  margin-bottom: 9px;
 }
 
 .topbar-menu {
@@ -28,11 +27,12 @@
   display: flex;
   gap: 1rem;
   margin-left: 2rem;
+
 }
 
-.topbar-menu a {
+.dash-link{
   text-decoration: none;
-  color: inherit;
+  color: #0f2b27;
 }
 
 .topbar-menu li {
@@ -40,11 +40,21 @@
   font-weight: 600;
   padding: 0.5rem 1rem;
   border-radius: 8px;
+  color: #0f2b27;
   transition: background 0.3s;
 }
 
 .topbar-menu li:hover {
   color: #00796b;
+}
+
+.topbar-menu li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.topbar-menu.active {
+  display: flex !important;
 }
 
 .topbar-right {
@@ -59,10 +69,10 @@
   display: none;
   font-size: 2rem;
   cursor: pointer;
-  position: absolute;  /* Ensuring it's at the top right */
-  top: 20px;
+  position: absolute;
+  top: 10px;
   right: 20px;
-  z-index: 1000;  /* Ensure it's above other content */
+  z-index: 1000;
 }
 
 .main-content {
@@ -132,16 +142,17 @@
   }
 
   .topbar-menu {
+    display: none;
     flex-direction: column;
     gap: 0.5rem;
     margin-left: 0;
-    display: none;
     width: 100%;
   }
 
   .topbar-menu.active {
-    display: flex;
+    display: flex !important;
   }
+
 
   .topbar-right {
     align-self: flex-end;
@@ -152,34 +163,36 @@
   }
 
   .hamburger-icon {
-    display: block;  /* Now the hamburger will be visible on small screens */
+    display: block;
+    top: 9.9px;
   }
 }
 
 /* For screens 425px or smaller */
 @media (max-width: 425px) {
   .topbar-menu {
-    display: flex !important;
     flex-direction: column;
     width: 100%;
     margin-left: 0;
+    text-decoration: none;
   }
 
   .topbar-menu li {
-    display: block !important;
-    background-color: #e0f7fa;
+    display: block;
+    text-decoration: none;
+    color: #0f2b27;
     text-align: center;
+    width: 100%;
   }
 
-  /* Adjusting topbar for 425px and below */
   .topbar {
     padding: 1rem;
   }
 }
 
-@media (min-width: 1440px){
+@media (min-width: 1440px) {
   .widgets-container {
-    padding: 0px 300px ;
+    padding: 0px 300px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   }
@@ -187,8 +200,18 @@
 
 @media (max-width: 1024px) {
   .widgets-container {
-    padding: 0px 200px ;
+    padding: 0px 200px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 320px) {
+  .topbar-left{
+    font-size: 0.9rem;
+  }
+
+  .hamburger-icon{
+    top: 9px;
   }
 }
