@@ -51,7 +51,7 @@ const Dashboard = () => {
           </ul>
         </div>
 
-        
+
 
         <div className="hamburger-icon" onClick={toggleMenu}>
           {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
