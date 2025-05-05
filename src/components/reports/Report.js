@@ -22,7 +22,7 @@ const Report = () => {
           todayRecovered: item.todayRecovered.toLocaleString(),
           critical: item.critical.toLocaleString(),
           status: item.cases > 1000000 ? 'Critical' : 'Stable',
-          disease: item.disease,
+          disease: 'COVID-19',
           dateAdded: new Date(item.updated).toLocaleDateString(),
         }));
         setPatients(formattedData);
